@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novo empréstimo – SGB Biblioteca</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body id="pagina-emprestimo">
+  <header class="cabecalho">
+    <div class="cabecalho__conteudo">
+      <a class="logo" href="index.html">SGB – Biblioteca</a>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="livros.html">Livros</a></li>
+          <li><a href="usuarios.html">Usuários</a></li>
+          <li><a href="emprestimo.html" aria-current="page">Empréstimo</a></li>
+          <li><a href="devolucao.html">Devolução</a></li>
+          <li><a href="atrasos.html">Atrasos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <h1>Novo empréstimo</h1>
+    <p class="subtitulo">Registrar o empréstimo de um livro</p>
+    <section class="painel painel--centralizado" aria-labelledby="titulo-form">
+      <h2 id="titulo-form" class="visualmente-oculto">Formulário de empréstimo</h2>
+      <form id="formEmprestimo" novalidate>
+        <div class="campo">
+          <label for="usuario">Usuário *</label>
+          <select id="usuario" name="usuario" required>
+            <option value="">Selecione um usuário</option>
+          </select>
+          <span class="erro" id="erro-usuario"></span>
+        </div>
+        <div class="campo">
+          <label for="livro">Livro *</label>
+          <select id="livro" name="livro" required>
+            <option value="">Selecione um livro</option>
+          </select>
+          <span class="erro" id="erro-livro"></span>
+        </div>
+
+        <section class="resumo" aria-labelledby="titulo-resumo" aria-live="polite">
+          <h3 id="titulo-resumo">Resumo do empréstimo</h3>
+          <dl>
+            <dt>Exemplares disponíveis:</dt><dd id="resumoDisponiveis">–</dd>
+            <dt>Empréstimos ativos do usuário:</dt><dd id="resumoAtivos">–</dd>
+            <dt>Data prevista de devolução:</dt><dd id="resumoPrazo">–</dd>
+          </dl>
+        </section>
+
+          <div id="mensagem" class="mensagem" role="alert" hidden></div>
+        <div class="acoes">
+          <button type="submit" class="botao">Registrar empréstimo</button>
+          <button type="reset" class="botao botao--secundario">Cancelar</button>
+        </div>
+        <p class="nota">* campos obrigatórios · Prazo de 7 dias · Limite de 3 empréstimos ativos por usuário</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>SGB – Projeto Integrador · Desenvolvimento de Software</p>
+  </footer>
+
+  <script src="js/armazenamento.js"></script>
+  <script src="js/validacoes.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/emprestimo.js"></script>
+</body>
+</html>

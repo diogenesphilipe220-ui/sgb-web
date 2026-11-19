@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel da biblioteca – SGB Biblioteca</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body id="pagina-inicio">
+  <header class="cabecalho">
+    <div class="cabecalho__conteudo">
+      <a class="logo" href="index.html">SGB – Biblioteca</a>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="livros.html">Livros</a></li>
+          <li><a href="usuarios.html">Usuários</a></li>
+          <li><a href="emprestimo.html">Empréstimo</a></li>
+          <li><a href="devolucao.html">Devolução</a></li>
+          <li><a href="atrasos.html">Atrasos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <h1>Painel da biblioteca</h1>
+    <p class="subtitulo">Resumo do acervo e dos empréstimos</p>
+    <section class="cartoes" aria-label="Resumo">
+      <article class="cartao"><h2>Livros cadastrados</h2><p class="cartao__valor" id="totalLivros">0</p></article>
+      <article class="cartao"><h2>Empréstimos ativos</h2><p class="cartao__valor" id="totalAtivos">0</p></article>
+      <article class="cartao"><h2>Empréstimos em atraso</h2><p class="cartao__valor" id="totalAtrasos">0</p></article>
+    </section>
+
+    <section aria-labelledby="titulo-atalhos">
+      <h2 id="titulo-atalhos">Atalhos</h2>
+      <div class="atalhos">
+        <a class="botao botao--secundario" href="livros.html">Cadastrar livro</a>
+        <a class="botao botao--secundario" href="usuarios.html">Cadastrar usuário</a>
+        <a class="botao botao--secundario" href="emprestimo.html">Novo empréstimo</a>
+        <a class="botao botao--secundario" href="devolucao.html">Registrar devolução</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-proximas">
+      <h2 id="titulo-proximas">Próximas devoluções</h2>
+      <div class="tabela-container">
+        <table id="tabelaProximas" class="tabela">
+          <thead><tr><th>Usuário</th><th>Livro</th><th>Data prevista</th></tr></thead>
+          <tbody id="corpoProximas"></tbody>
+        </table>
+      </div>
+      <p id="semProximas" class="aviso" hidden>Nenhum empréstimo ativo no momento.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>SGB – Projeto Integrador · Desenvolvimento de Software</p>
+  </footer>
+
+  <script src="js/armazenamento.js"></script>
+  <script src="js/validacoes.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/painel.js"></script>
+</body>
+</html>

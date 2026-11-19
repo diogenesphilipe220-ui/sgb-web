@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar devolução – SGB Biblioteca</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body id="pagina-devolucao">
+  <header class="cabecalho">
+    <div class="cabecalho__conteudo">
+      <a class="logo" href="index.html">SGB – Biblioteca</a>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="livros.html">Livros</a></li>
+          <li><a href="usuarios.html">Usuários</a></li>
+          <li><a href="emprestimo.html">Empréstimo</a></li>
+          <li><a href="devolucao.html" aria-current="page">Devolução</a></li>
+          <li><a href="atrasos.html">Atrasos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <h1>Registrar devolução</h1>
+    <p class="subtitulo">Devolver um livro e conferir a multa</p>
+    <section class="painel painel--centralizado" aria-labelledby="titulo-form">
+      <h2 id="titulo-form" class="visualmente-oculto">Formulário de devolução</h2>
+      <form id="formDevolucao" novalidate>
+        <div class="campo">
+          <label for="emprestimo">Empréstimo ativo *</label>
+          <select id="emprestimo" name="emprestimo" required>
+            <option value="">Selecione o empréstimo</option>
+          </select>
+          <span class="erro" id="erro-emprestimo"></span>
+        </div>
+        <div class="campo campo--curto">
+          <label for="dataDevolucao">Data da devolução *</label>
+          <input type="date" id="dataDevolucao" name="dataDevolucao" required>
+          <span class="erro" id="erro-dataDevolucao"></span>
+        </div>
+
+        <section class="resumo" aria-labelledby="titulo-resumo" aria-live="polite">
+          <h3 id="titulo-resumo">Resumo da devolução</h3>
+          <dl>
+            <dt>Data prevista:</dt><dd id="resumoPrevista">–</dd>
+            <dt>Dias de atraso:</dt><dd id="resumoAtraso">–</dd>
+            <dt>Multa (R$ 1,00 por dia):</dt><dd id="resumoMulta" class="destaque">R$ 0,00</dd>
+          </dl>
+        </section>
+
+          <div id="mensagem" class="mensagem" role="alert" hidden></div>
+        <div class="acoes">
+          <button type="submit" class="botao">Registrar devolução</button>
+          <button type="reset" class="botao botao--secundario">Cancelar</button>
+        </div>
+        <p class="nota">* campos obrigatórios</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>SGB – Projeto Integrador · Desenvolvimento de Software</p>
+  </footer>
+
+  <script src="js/armazenamento.js"></script>
+  <script src="js/validacoes.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/devolucao.js"></script>
+</body>
+</html>

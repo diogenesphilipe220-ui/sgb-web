@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empréstimos – SGB Biblioteca</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body id="pagina-atrasos">
+  <header class="cabecalho">
+    <div class="cabecalho__conteudo">
+      <a class="logo" href="index.html">SGB – Biblioteca</a>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="livros.html">Livros</a></li>
+          <li><a href="usuarios.html">Usuários</a></li>
+          <li><a href="emprestimo.html">Empréstimo</a></li>
+          <li><a href="devolucao.html">Devolução</a></li>
+          <li><a href="atrasos.html" aria-current="page">Atrasos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <h1>Empréstimos</h1>
+    <p class="subtitulo">Empréstimos ativos e em atraso</p>
+    <section aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista" class="visualmente-oculto">Lista de empréstimos</h2>
+      <div class="barra-filtros">
+        <div class="abas" role="group" aria-label="Filtro da listagem">
+          <button type="button" class="aba aba--ativa" data-filtro="ativos">Todos ativos</button>
+          <button type="button" class="aba" data-filtro="atraso">Em atraso</button>
+        </div>
+        <div class="campo campo--em-linha">
+          <label for="dataReferencia">Data de referência:</label>
+          <input type="date" id="dataReferencia" name="dataReferencia">
+        </div>
+      </div>
+      <div class="tabela-container">
+        <table id="tabelaEmprestimos" class="tabela">
+          <thead><tr><th>Nº</th><th>Usuário</th><th>Livro</th><th>Empréstimo</th><th>Prevista</th><th>Situação</th></tr></thead>
+          <tbody id="corpoEmprestimos"></tbody>
+        </table>
+      </div>
+      <p id="semResultados" class="aviso" hidden>Nenhum empréstimo para exibir.</p>
+
+      <section class="resumo" aria-labelledby="titulo-resumo">
+        <h3 id="titulo-resumo">Resumo</h3>
+        <p>Ativos: <strong id="resumoAtivos">0</strong> · Em atraso: <strong id="resumoAtrasos">0</strong> ·
+           Multa acumulada estimada: <strong id="resumoMultaTotal">R$ 0,00</strong></p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>SGB – Projeto Integrador · Desenvolvimento de Software</p>
+  </footer>
+
+  <script src="js/armazenamento.js"></script>
+  <script src="js/validacoes.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/atrasos.js"></script>
+</body>
+</html>
